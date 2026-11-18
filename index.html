@@ -49,6 +49,7 @@
   td{padding:6px 4px;border-bottom:1px solid #f0eee9}
   td.n,th.n{text-align:right}
   tr.click{cursor:pointer} tr.click:hover{background:#faf9f6}
+  .leaflet-tile-pane{filter:grayscale(1) brightness(1.04) contrast(.92)}
   .maplegend{background:#fff;padding:10px 12px;border-radius:10px;box-shadow:0 1px 6px rgba(0,0,0,.15);font-size:12px;line-height:1.5}
   .maplegend .grad{display:flex;height:9px;width:160px;border-radius:4px;overflow:hidden;margin:4px 0 2px}
   .maplegend .grad span{flex:1}
@@ -189,8 +190,8 @@ function money(vol, u, p){
 
 // ---------- mapa ----------
 const map = L.map("map",{zoomSnap:.25,preferCanvas:true}).setView([-14.5,-52],4.25);
-L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",{
-  attribution:'&copy; OpenStreetMap &copy; CARTO', subdomains:"abcd", maxZoom:12
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{
+  attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>', maxZoom:12
 }).addTo(map);
 
 const SCALE = ["#fff5f0","#fdd5c4","#fca486","#f6694f","#d42a2a","#9b0d1e"];
